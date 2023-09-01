@@ -1,4 +1,4 @@
-package Lesson3;
+package Lesson_work_3;
 
 public class Program {
 
