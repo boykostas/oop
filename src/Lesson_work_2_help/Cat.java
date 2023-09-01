@@ -3,39 +3,26 @@ package Lesson_work_2_help;
 public class Cat {
     //#region Fields
 
-    /**
-     * Кличка
-     */
+    /** Кличка */
     private String name;
 
-    /**
-     * Аппетит
-     */
+    /** Аппетит */
     private int appetite;
 
-    /**
-     * Сытость
-     */
+    /** Сытость */
     private boolean satiety;
 
     //#endregion
-
     //#region Constructors
 
-    /**
-     *
-     * @param name - кличка кота
-     */
+    /** @param name - кличка кота */
     public Cat(String name) {
         this.name = name;
         this.satiety = false;
     }
 
-    /**
-     *
-     * @param name - кличка кота
-     * @param appetite - сытость
-     */
+    /** @param name - кличка кота
+     * @param appetite - сытость */
     public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
@@ -43,12 +30,7 @@ public class Cat {
     }
 
     //#endregion
-
-
-    /**
-     * Покормить кота
-     * @param plate - тарелка с едой
-     */
+    /** Покормить кота @param plate - тарелка с едой */
     public void eat(Plate plate) {
         // Удаляем еду из миски в соответствии с аппетитом кота
         if (plate.decreaseFood(this.appetite)) { // Еды оказалось достаточно
@@ -62,26 +44,17 @@ public class Cat {
         }
     }
 
-    /**
-     * Вернуть кличку кота
-     * @return - кличка кота
-     */
+    /** Вернуть кличку кота @return - кличка кота  */
     public String getName() {
         return name;
     }
 
-    /**
-     * Установить кличку кота
-     * @param name - кличка кота
-     */
+    /** Установить кличку кота @param name - кличка кота */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Вернуть признак сытости кота
-     * @return - сытость
-     */
+    /** Вернуть признак сытости кота @return - сытость */
     public boolean isSatiety() {
         return satiety;
     }
