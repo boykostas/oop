@@ -1,8 +1,8 @@
-package ru.geekbrains.lesson5.views;
+package Lesson_work_5.views;
 
-import ru.geekbrains.lesson5.models.Table;
-import ru.geekbrains.lesson5.presenters.View;
-import ru.geekbrains.lesson5.presenters.ViewObserver;
+import Lesson_work_5.models.Table;
+import Lesson_work_5.presenters.View;
+import Lesson_work_5.presenters.ViewObserver;
 
 import java.util.Collection;
 import java.util.Date;

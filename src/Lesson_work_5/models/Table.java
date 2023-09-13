@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson5.models;
+package Lesson_work_5.models;
 
 import java.util.ArrayList;
 import java.util.Collection;
