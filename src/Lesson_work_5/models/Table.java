@@ -7,16 +7,16 @@ import java.util.Locale;
 public class Table {
 
     private static int counter;
-    private final int no;
+    private final int number;
 
     private final Collection<Reservation> reservations = new ArrayList<>();
 
     public int getNo() {
-        return no;
+        return number;
     }
 
     {
-        no = ++counter;
+        this.number = ++counter;
     }
 
     public Collection<Reservation> getReservations() {
@@ -25,6 +25,6 @@ public class Table {
 
     @Override
     public String toString() {
-        return String.format(Locale.getDefault(), "Столик #%d", no);
+        return String.format(Locale.getDefault(), "Столик #%d", number);
     }
 }

@@ -23,7 +23,8 @@ public class Program {
 
         view.reservationTable(new Date(), 3, "Станислав");
 
-        view.changeReservationTable(101, new Date(), 4, "Станислав");
+        view.changeReservationTable(101, new Date(), 3, "Станислав");
+
     }
 
 }
