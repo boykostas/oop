@@ -1,15 +1,15 @@
 package Lesson_work_6.isp;
 
-public class CustomPaymentService extends PaymentService implements WebMoneyPayable, CreditCardPayable {
-    @Override
-    public void payWebMoney(int amount) {
-        System.out.printf("Custom pay by web money %d\n", amount);
-    }
+public class CustomPaymentService extends PaymentService implements WebMoney, CreditCard {
 
-    @Override
-    public void payCreditCard(int amount) {
-        System.out.printf("Custom pay by credit card %d\n", amount);
-    }
+	@Override
+	public void payWebMoney(int amount) {
+		System.out.println("Custom pay by webMoney" + amount + "\n");
+	}
 
+	@Override
+	public void payCreditCard(int amount) {
+		System.out.println("Custom pay by credit card " + amount + "\n");
+	}
 
 }

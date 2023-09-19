@@ -1,16 +1,13 @@
 package Lesson_work_6.lsp;
 
-/**
- * S
- */
-public class Duck extends Bird {
+public class Duck extends Animal {
 
-    public Duck() {
-        flySpeed = 15;
-    }
+	public Duck() {
+		super.flySpeed = 15;
+	}
 
-    @Override
-    public void fly() {
-        System.out.printf("Утка летит со скоростью %d\n", flySpeed);
-    }
+	@Override
+	public void fly() {
+		System.out.println("The duck fly with speed " + flySpeed + "\n");
+	}
 }

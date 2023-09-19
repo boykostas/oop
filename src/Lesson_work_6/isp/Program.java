@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Program {
+	public static void main(String[] args) {
+		List<CreditCard> paymentServices = new ArrayList<>();
+		// paymentServices.add(new CustomPaymentService());
+		paymentServices.add(new InternetPaymentService());
 
-    public static void main(String[] args) {
-        List<PhonePayable> paymentServices = new ArrayList<>();
-        paymentServices.add(new InternetPaymentService());
-        //paymentServices.add(new CustomPaymentService());
-
-        for (PhonePayable paymentService : paymentServices){
-            paymentService.payPhoneNumber(2000);
-            break;
-        }
-
-    }
-
+		for (CreditCard payabel : paymentServices) {
+			payabel.payCreditCard(500);
+			break;
+		}
+	}
 }
