@@ -1,24 +1,25 @@
 package Lesson_work_7.observer;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Company {
-
-    private Random random = new Random();
-
-    private String name;
     private Publisher jobAgency;
-    private int maxSalary;
+    private static List<Vacancy> vacancy = new ArrayList<>();
 
-    public Company(String name, Publisher jobAgency, int maxSalary) {
-        this.name = name;
+    public Company(String companyName, Publisher jobAgency, int maxSalary, int experience) {
         this.jobAgency = jobAgency;
-        this.maxSalary = maxSalary;
+        vacancy.add(new Vacancy(experience, maxSalary, companyName));
     }
 
-    public void needEmployee(){
-        int salary = random.nextInt(maxSalary);
-        jobAgency.sendOffer(name, salary);
+    public static List<Vacancy> getVacancy() {
+        return vacancy;
+    }
+
+    public void needEmloyee() {
+        for (Vacancy vacancy2 : vacancy) {
+            jobAgency.sendOffer(vacancy2);
+        }
     }
 
 }

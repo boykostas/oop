@@ -1,36 +1,24 @@
 package Lesson_work_7.observer;
 
 public class Program {
-
-    /**
-     * TODO: Доработать приложение, которое разрабатывалось на семинаре, поработать с шаблоном проектирования Observer,
-     *  добавить новый тип соискателя.
-     *  Добавить новую сущность "Вакансия", компания должна рассылать вакансии.
-     *  Только после этого вы можете усложнить ваше приложение (при желании),
-     *  например, добавить тип вакансии (enum), учитывать тип вакансии при отправке предложения соискателю.
-     * @param args
-     */
     public static void main(String[] args) {
-        Publisher jobAgency = new JobAgency();
-        Company google = new Company("Google",  jobAgency,120000);
-        Company yandex = new Company("Yandex",  jobAgency,90000);
-        Company geekBrains = new Company("GeekBrains",  jobAgency,95000);
-
-        Student student1 = new Student("Student1");
-        Worker worker1 = new Worker("Worker1");
-        Worker worker2 = new Worker("Worker2");
-
-        jobAgency.registerObserver(student1);
-        jobAgency.registerObserver(worker1);
-        jobAgency.registerObserver(worker2);
-
-        for (int i = 0; i < 3; i++){
-            google.needEmployee();
-            yandex.needEmployee();
-            geekBrains.needEmployee();
+        Publisher jodAgency = new JobAgency();
+        Company company1 = new Company("Roga", jodAgency, 20000, 0);
+        Company company2 = new Company("Kopyta", jodAgency, 50000, 0);
+        Company company3 = new Company("Volga", jodAgency, 100000, 2);
+        Student student1 = new Student("Misha", TypeOfVacancy.Junior_developer, 0);
+        Worker worker1 = new Worker("Dima", TypeOfVacancy.Developer, 2);
+        Cleaner cleaner1 = new Cleaner("Sasha", TypeOfVacancy.Cleaner, 3);
+        Manager manager1 = new Manager("Sonya", TypeOfVacancy.PM, 8);
+        jodAgency.registerObserver(student1);
+        jodAgency.registerObserver(cleaner1);
+        jodAgency.registerObserver(worker1);
+        jodAgency.registerObserver(manager1);
+        for (int i = 0; i < 3; i++) {
+            company1.needEmloyee();
+            company2.needEmloyee();
+            company3.needEmloyee();
         }
-
-
+        System.out.println(Company.getVacancy());
     }
-
 }

@@ -1,25 +1,25 @@
 package Lesson_work_7.observer;
 
-public class Worker implements Observer {
+public class Worker extends Person {
 
-    private String name;
-
-    private int salary = 80000;
-
-    public Worker(String name) {
-        this.name = name;
+    public Worker(String employeeName, TypeOfVacancy type, int experience) {
+        super(employeeName, type, experience);
+        super.setSalary(80000);
     }
 
     @Override
-    public void receiveOffer(String companyName, int salary) {
-        if (this.salary <= salary){
-            System.out.printf("Студент: %s: Мне нужна эта работа! (Компания: %s; Заработная плата: %d)\n",
-                    name, companyName, salary);
-            this.salary = salary;
+    public Person receiveOffer(String companyName, int experience, TypeOfVacancy typeOfVacancy, int salary) {
+        if (super.getSalary() <= salary) {
+            System.out.printf(
+                    "Разработчик: %s: Мне нужна эта работа! (Компания: %s; Вакансия: %s; Опыт: %d; Заработная плата: %d)\n",
+                    getEmployeeName(), companyName, typeOfVacancy, experience, salary);
+            return this;
+        } else {
+            System.out.printf(
+                    "Разработчик: %s: Мне не нужна эта работа! (Компания: %s; Вакансия: %s; Опыт: %d; Заработная плата: %d)\n",
+                    getEmployeeName(), companyName, typeOfVacancy, experience, salary);
         }
-        else{
-            System.out.printf("Студент: %s: Я найду работу получше! (Компания: %s; Заработная плата: %d)\n",
-                    name, companyName, salary);
-        }
+        return null;
     }
+
 }
